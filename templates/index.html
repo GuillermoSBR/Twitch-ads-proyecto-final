@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <script>
+
+var a = new Image();
+a.src = "static/frame_actual.png?"+ new Date().getTime();
+
+var aPromise = new Promise((resolve)=>{
+        a.onload = resolve;
+    });
+
+var a_base64;
+
+Promise.all([aPromise]).then(()=>{
+        a_base64 = getBase64Image(a);
+});
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function getBase64Image(img) {
+    // Create an empty canvas element
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    // Copy the image contents to the canvas
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+
+    // Get the data-URL formatted image
+    // Firefox supports PNG and JPEG. You could check img.src to
+    // guess the original format, but be aware the using "image/jpg"
+    // will re-encode the image.
+    var dataURL = canvas.toDataURL("image/png");
+
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
+
+function reload(){
+    var b = new Image();
+
+
+    b.src = "static/frame_nuevo.png?"+ new Date().getTime();
+
+
+    var bPromise = new Promise((resolve)=>{
+        b.onload = resolve;
+    });
+
+    Promise.all([bPromise]).then(()=>{
+        var b_base64 = getBase64Image(b);
+        if(a_base64 == b_base64){
+            console.log("Son iguales");
+        } else {
+            var container = document.getElementById("myImage");
+            var new_gif = "static/ad.gif?" + new Date().getTime();
+            //container.src = "static/ad.png?" + new Date().getTime();
+            container.src = new_gif;
+            a_base64 = b_base64
+            console.log("Refreshed");
+        }
+});
+
+}
+
+setInterval(reload, 3000);
+    </script>
+
+</head>
+<body>
+
+    <img src="static/ad.png" id="myImage" />
+</body>
+</html>
+
+
+

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <img src="static/digitas_logos_2018_digitas_horizontal_2018 (2).png" width="200px">
+    <meta name=”viewport” content=”width=device-width, initial-scale=1.0”, charset="UTF-8">
+    <title>Twitch sync</title>
+
+    <style type="text/css">
+#myDIV {
+   color: white;
+  position: ;
+  width: 80px;
+  height: 20px;
+  text-align: center;
+  background-color: black;
+  border-radius: 5px;
+  display: None;
+  margin: 0;
+  position: absolute;
+  top: 60%;
+  left: 35%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: monospace;
+ font-size: 15px;
+ text-shadow: -0.5px 0.5px 0 #000,
+                          0.25px 0.25px 0 #000,
+                         0.25px -0.25px 0 #000,
+                        -0.25px -0.25px 0 #000;
+ text-decoration: none;
+}
+
+#myDIV2 {
+  color: white;
+  position: ;
+  width: 80px;
+  height: 20px;
+  text-align: center;
+  background-color: black;
+  border-radius: 5px;
+  display: None;
+  margin: 0;
+  position: absolute;
+  top: 60%;
+  left: 65%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: monospace;
+ font-size: 15px;
+ text-shadow: -0.5px 0.5px 0 #000,
+                          0.25px 0.25px 0 #000,
+                         0.25px -0.25px 0 #000,
+                        -0.25px -0.25px 0 #000;
+ text-decoration: none;
+}
+
+</style>
+
+    <script>
+     function makeRequest1(
+      ) {
+      var xhr = new XMLHttpRequest(),
+    method = "GET",
+    url = "https://twitch-ads-kwinxduwka-ue.a.run.app/change_ad/Coscu/mac";
+
+    xhr.open(method, url, true);
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            console.log(xhr.responseText);
+        }
+    };
+xhr.send();
+
+      }
+
+     function makeRequest2(
+      ) {
+      var xhr = new XMLHttpRequest(),
+    method = "GET",
+    url = "https://twitch-ads-kwinxduwka-ue.a.run.app/change_ad/Coscu/coca";
+
+    xhr.open(method, url, true);
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            console.log(xhr.responseText);
+        }
+    };
+xhr.send();
+
+      }
+
+      function successBox() {
+  var x = document.getElementById("myDIV");
+  x.style.display = "block";
+  setTimeout(function(){
+    x.style.display = "none";
+    }, 2000);
+}
+    function successBox2() {
+  var x = document.getElementById("myDIV2");
+  x.style.display = "block";
+  setTimeout(function(){
+    x.style.display = "none";
+    }, 2000);
+}
+
+    </script>
+<style>
+    body {
+background-color: lightgray;
+}
+</style>
+
+</head>
+<body>
+
+<style type="text/css">
+#submit {
+ background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: 700;
+  height: 12rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 7px 10px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#submit:hover {
+ border: none;
+ background: orange;
+ box-shadow: 0px 0px 1px #777;
+}
+
+
+
+  /* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+.flex-parent {
+  display: flex;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+button.margin-right {
+  margin-right: 120px;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+
+</style>
+
+<div class="flex-parent jc-center center">
+       <button id="submit"
+               type="button"
+               class="btn btn-block btn-primary mb-2 margin-right"
+               onclick="makeRequest1();JavaScript:alert('Advertisement 1 sent!');">
+                <img src=static/ad1.png alt="Read book" width="180px">
+                <br>
+                <br>
+                AD 1
+                <br>
+                  </button>
+    <!span class="popuptext"><!img src=static/ad1.png width = "155" height = "90"/><!/span>
+
+    <button
+               id="submit"
+               type="button"
+               class="btn btn-block btn-primary mb-2"
+               onclick="makeRequest2();JavaScript:alert('Advertisement 2 sent!');">
+                <img src=static/anuncio.png alt="Read book" width="180px">
+                <br>
+                <br>
+                AD 2
+                <br>
+                  </button>
+    <!span class="popuptext2"><!img src=static/anuncio.png width = "155" height = "90"/><!/span>
+</div>
+
+<div
+        id="myDIV"
+        type="text/css">
+Success.
+</div>
+<div
+        id="myDIV2"
+        type="text/css">
+Success.
+</div>
+
+</body>
+</html>
